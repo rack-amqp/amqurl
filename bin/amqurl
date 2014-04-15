@@ -3,12 +3,14 @@
 require 'optparse'
 require 'pp'
 require 'rack/amqp/curl'
-require 'rack/amqp/client'
 
+connection_options = {
+	host: 'localhost',
+  timeout: 5,
+}
 options = {
   http_method: 'GET',
-  broker_connection: { host: 'localhost' },
-  timeout: 5,
+	headers: {},
 }
 
 OptionParser.new do |opts|
@@ -26,16 +28,14 @@ OptionParser.new do |opts|
   # TODO support -T (upload file)
 end.parse!
 
-url = ARGV[0]
+url = ARGV[0].gsub(/\Aamqps?:\/\//, '')
 
 raise "Need to specify a URL before continuing" unless url
 
-#client = Rack::AMQP::Curl::Client.new(options[:broker_connection])
-Rack::AMQP::Client.with_client(options[:broker_connection]) do |client|
-  Timeout.timeout(options[:timeout]) do
+Rack::AMQP::Client.with_client(connection_options) do |client|
+  Timeout.timeout(connection_options[:timeout]) do
     response = client.request(url, options)
-    puts "response:"
-    pp response
+    puts response.payload
   end
 end
 

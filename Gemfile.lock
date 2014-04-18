@@ -1,14 +1,8 @@
 PATH
   remote: .
   specs:
-    rack-amqp-curl (0.0.0)
+    rack-amqp-curl (0.0.1)
       rack-amqp-client
-
-PATH
-  remote: ../rack-amqp-client
-  specs:
-    rack-amqp-client (0.0.1)
-      bunny
 
 GEM
   remote: https://rubygems.org/
@@ -32,6 +26,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    rack-amqp-client (0.0.1)
+      bunny
     rake (10.1.0)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -56,7 +52,7 @@ DEPENDENCIES
   emoji-rspec
   httparty
   pry
-  rack-amqp-client!
+  rack-amqp-client
   rack-amqp-curl!
   rake
   rspec

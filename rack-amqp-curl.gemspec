@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Rack::AMQP::Curl::VERSION
   spec.authors       = ["Joshua Szmajda"]
   spec.email         = ["josh@optoro.com"]
-  spec.description   = %q{amqp curl}
-  spec.summary       = %q{amqp curl}
-  spec.homepage      = ""
+  spec.description   = %q{AMQP-HTTP compliant curl clone}
+  spec.summary       = spec.description
+  spec.homepage      = "https://github.com/rack-amqp/amqurl"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

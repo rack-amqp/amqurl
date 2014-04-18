@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'rack/amqp/curl/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "rack-amqp-curl"
+  spec.name          = "amqurl"
   spec.version       = Rack::AMQP::Curl::VERSION
   spec.authors       = ["Joshua Szmajda"]
   spec.email         = ["josh@optoro.com"]

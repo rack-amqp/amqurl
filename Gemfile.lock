@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rack-amqp-curl (0.0.1)
+    amqurl (0.0.1)
       rack-amqp-client
 
 GEM
@@ -48,12 +48,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amqurl!
   bundler (~> 1.3)
   emoji-rspec
   httparty
   pry
   rack-amqp-client
-  rack-amqp-curl!
   rake
   rspec
   simplecov
